@@ -13,7 +13,7 @@
   import_tasks: installation.yml
   when: (ansible_facts['packages']['nginx'] is undefined) or (ansible_facts['packages']['nginx'][0].version != docker_version)
 
-- name: Replace nging.conf
+- name: Replace index.html
   template:
     src=templates/index.html
     dest=/var/www/html/index.html
